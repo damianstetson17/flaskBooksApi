@@ -1,5 +1,4 @@
 from flask import Flask, jsonify
-from werkzeug.wrappers import response
 from dataset import *
 
 app = Flask(__name__)
@@ -27,11 +26,11 @@ def get_all_libro():
 def get_libro(book_name):
 
     if len(libros) > 0:
-        response = jsonify({'result':'null'}) 
+        resp = jsonify({'result':'null'}) 
         for book in libros:
             if book['name'] == book_name:
-                response = jsonify(book)
-            return response
+                resp = jsonify(book)
+            return resp
     else:
         return jsonify({'result':'null'}) 
 
