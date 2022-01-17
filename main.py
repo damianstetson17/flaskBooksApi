@@ -1,4 +1,4 @@
-from flask import Flask, json, jsonify
+from flask import Flask, jsonify
 from werkzeug.wrappers import response
 from dataset import *
 
